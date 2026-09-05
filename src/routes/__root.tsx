@@ -104,10 +104,12 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 function RootShell({ children }: { children: ReactNode }) {
   const pathname = useRouterState({ select: (s) => s.location.pathname });
   const lang = pathname === "/ru" || pathname.startsWith("/ru/") ? "ru" : "uk";
+  const canonicalUrl = `https://nomeravto.pp.ua${pathname === "/" ? "" : pathname}`;
 
   return (
     <html lang={lang}>
       <head>
+        <link rel="canonical" href={canonicalUrl} />
         <HeadContent />
       </head>
       <body>
