@@ -1,0 +1,1 @@
+import{u as e}from"./plates-CRia6_ol.js";import{t}from"./HomePage-CBxmS5LN.js";var n=e(),r=()=>(0,n.jsx)(t,{lang:`ru`});export{r as component};

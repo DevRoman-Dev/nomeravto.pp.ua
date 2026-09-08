@@ -14,6 +14,7 @@ export function seoHead({
   path,
   altPath,
   jsonLd,
+  ogImage,
 }: {
   lang: Lang;
   title: string;
@@ -21,6 +22,7 @@ export function seoHead({
   path: string;
   altPath: string;
   jsonLd?: Record<string, unknown>[];
+  ogImage?: string;
 }) {
   const url = absoluteUrl(path);
   const altUrl = absoluteUrl(altPath);
@@ -30,10 +32,12 @@ export function seoHead({
       { name: "description", content: description },
       { property: "og:title", content: title },
       { property: "og:description", content: description },
+      { property: "og:image", content: ogImage ?? absoluteUrl("/og-image.jpg") },
       { property: "og:type", content: "website" },
       { property: "og:url", content: url },
       { property: "og:locale", content: lang === "uk" ? "uk_UA" : "ru_UA" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:image", content: ogImage ?? absoluteUrl("/og-image.jpg") },
       { name: "twitter:title", content: title },
       { name: "twitter:description", content: description },
       { name: "robots", content: "index, follow" },

@@ -16,6 +16,7 @@ import { Route as RegionCodeRouteImport } from './routes/region.$code'
 import { Route as RuIndexRouteImport } from './routes/ru.index'
 import { Route as RuNomerPlateRouteImport } from './routes/ru.nomer.$plate'
 import { Route as RuRegionCodeRouteImport } from './routes/ru.region.$code'
+import { Route as ApiOgPlatePlateRouteImport } from './routes/api/og/plate.$plate'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -52,6 +53,11 @@ const RuRegionCodeRoute = RuRegionCodeRouteImport.update({
   path: '/ru/region/$code',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ApiOgPlatePlateRoute = ApiOgPlatePlateRouteImport.update({
+  id: '/api/og/plate/$plate',
+  path: '/api/og/plate/$plate',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -61,6 +67,7 @@ export interface FileRoutesByFullPath {
   '/ru/': typeof RuIndexRoute
   '/ru/nomer/$plate': typeof RuNomerPlateRoute
   '/ru/region/$code': typeof RuRegionCodeRoute
+  '/api/og/plate/$plate': typeof ApiOgPlatePlateRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -70,6 +77,7 @@ export interface FileRoutesByTo {
   '/ru': typeof RuIndexRoute
   '/ru/nomer/$plate': typeof RuNomerPlateRoute
   '/ru/region/$code': typeof RuRegionCodeRoute
+  '/api/og/plate/$plate': typeof ApiOgPlatePlateRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -80,6 +88,7 @@ export interface FileRoutesById {
   '/ru/': typeof RuIndexRoute
   '/ru/nomer/$plate': typeof RuNomerPlateRoute
   '/ru/region/$code': typeof RuRegionCodeRoute
+  '/api/og/plate/$plate': typeof ApiOgPlatePlateRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -91,6 +100,7 @@ export interface FileRouteTypes {
     | '/ru/'
     | '/ru/nomer/$plate'
     | '/ru/region/$code'
+    | '/api/og/plate/$plate'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -100,6 +110,7 @@ export interface FileRouteTypes {
     | '/ru'
     | '/ru/nomer/$plate'
     | '/ru/region/$code'
+    | '/api/og/plate/$plate'
   id:
     | '__root__'
     | '/'
@@ -109,6 +120,7 @@ export interface FileRouteTypes {
     | '/ru/'
     | '/ru/nomer/$plate'
     | '/ru/region/$code'
+    | '/api/og/plate/$plate'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -119,6 +131,7 @@ export interface RootRouteChildren {
   RuIndexRoute: typeof RuIndexRoute
   RuNomerPlateRoute: typeof RuNomerPlateRoute
   RuRegionCodeRoute: typeof RuRegionCodeRoute
+  ApiOgPlatePlateRoute: typeof ApiOgPlatePlateRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -172,6 +185,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof RuRegionCodeRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/api/og/plate/$plate': {
+      id: '/api/og/plate/$plate'
+      path: '/api/og/plate/$plate'
+      fullPath: '/api/og/plate/$plate'
+      preLoaderRoute: typeof ApiOgPlatePlateRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -183,6 +203,7 @@ const rootRouteChildren: RootRouteChildren = {
   RuIndexRoute: RuIndexRoute,
   RuNomerPlateRoute: RuNomerPlateRoute,
   RuRegionCodeRoute: RuRegionCodeRoute,
+  ApiOgPlatePlateRoute: ApiOgPlatePlateRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

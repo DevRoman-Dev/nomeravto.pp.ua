@@ -19,6 +19,7 @@ export const Route = createFileRoute("/nomer/$plate")({
       description,
       path: `/nomer/${latin}`,
       altPath: `/ru/nomer/${latin}`,
+      ogImage: `https://nomeravto.pp.ua/api/og/plate/${latin}.png`,
       jsonLd: [
         breadcrumbLd([
           { name: "Головна", item: "/" },

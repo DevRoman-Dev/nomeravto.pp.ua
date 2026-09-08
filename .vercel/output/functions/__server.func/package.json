@@ -1,0 +1,10 @@
+{
+  "name": "traced-node-modules",
+  "version": "1.0.0",
+  "type": "module",
+  "private": true,
+  "dependencies": {
+    "@resvg/resvg-js": "2.6.2",
+    "@resvg/resvg-js-win32-x64-msvc": "2.6.2"
+  }
+}
