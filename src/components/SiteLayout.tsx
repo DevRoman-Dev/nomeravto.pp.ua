@@ -78,9 +78,22 @@ export function SiteLayout({
               © 2026 {t("siteName", lang)} — {t("footer", lang)}
             </p>
           </div>
-          <div className="shrink-0">
+          <div className="shrink-0 flex flex-col gap-3 items-start sm:items-end">
             <a href={`${base}/sitemap`} className="hover:text-primary transition-colors">
               {t("sitemap", lang)}
+            </a>
+            <a
+              href="https://bookmark.apartner.pro/dr/nomeravto.pp.ua"
+              title="Domain Rating on Bookmark.Apartner.Pro"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src="https://bookmark.apartner.pro/badge.php?domain=nomeravto.pp.ua"
+                alt="DR 83 - Bookmark.Apartner.Pro"
+                width="230"
+                height="28"
+              />
             </a>
           </div>
         </div>
