@@ -1,0 +1,1 @@
+import{u as e}from"./plates-DsGQNKFw.js";import{s as t}from"./index-CeNpmZw2.js";import{t as n}from"./RegionPage-DkNAcZAz.js";var r=e();function i(){let{code:e}=t.useParams();return(0,r.jsx)(n,{lang:`uk`,code:e.toUpperCase()})}export{i as component};

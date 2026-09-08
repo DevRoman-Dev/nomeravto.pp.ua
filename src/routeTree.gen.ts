@@ -14,9 +14,15 @@ import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as NomerPlateRouteImport } from './routes/nomer.$plate'
 import { Route as RegionCodeRouteImport } from './routes/region.$code'
 import { Route as RuIndexRouteImport } from './routes/ru.index'
+import { Route as SitemapIndexRouteImport } from './routes/sitemap.index'
 import { Route as RuNomerPlateRouteImport } from './routes/ru.nomer.$plate'
 import { Route as RuRegionCodeRouteImport } from './routes/ru.region.$code'
+import { Route as RuSitemapIndexRouteImport } from './routes/ru.sitemap.index'
+import { Route as SitemapCodeIndexRouteImport } from './routes/sitemap.$code.index'
+import { Route as SitemapCodeSeriesRouteImport } from './routes/sitemap.$code.$series'
 import { Route as ApiOgPlatePlateRouteImport } from './routes/api/og/plate.$plate'
+import { Route as RuSitemapCodeIndexRouteImport } from './routes/ru.sitemap.$code.index'
+import { Route as RuSitemapCodeSeriesRouteImport } from './routes/ru.sitemap.$code.$series'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -43,6 +49,11 @@ const RuIndexRoute = RuIndexRouteImport.update({
   path: '/ru/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const SitemapIndexRoute = SitemapIndexRouteImport.update({
+  id: '/sitemap/',
+  path: '/sitemap/',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const RuNomerPlateRoute = RuNomerPlateRouteImport.update({
   id: '/ru/nomer/$plate',
   path: '/ru/nomer/$plate',
@@ -53,9 +64,34 @@ const RuRegionCodeRoute = RuRegionCodeRouteImport.update({
   path: '/ru/region/$code',
   getParentRoute: () => rootRouteImport,
 } as any)
+const RuSitemapIndexRoute = RuSitemapIndexRouteImport.update({
+  id: '/ru/sitemap/',
+  path: '/ru/sitemap/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SitemapCodeIndexRoute = SitemapCodeIndexRouteImport.update({
+  id: '/sitemap/$code/',
+  path: '/sitemap/$code/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SitemapCodeSeriesRoute = SitemapCodeSeriesRouteImport.update({
+  id: '/sitemap/$code/$series',
+  path: '/sitemap/$code/$series',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ApiOgPlatePlateRoute = ApiOgPlatePlateRouteImport.update({
   id: '/api/og/plate/$plate',
   path: '/api/og/plate/$plate',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RuSitemapCodeIndexRoute = RuSitemapCodeIndexRouteImport.update({
+  id: '/ru/sitemap/$code/',
+  path: '/ru/sitemap/$code/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RuSitemapCodeSeriesRoute = RuSitemapCodeSeriesRouteImport.update({
+  id: '/ru/sitemap/$code/$series',
+  path: '/ru/sitemap/$code/$series',
   getParentRoute: () => rootRouteImport,
 } as any)
 
@@ -65,9 +101,15 @@ export interface FileRoutesByFullPath {
   '/nomer/$plate': typeof NomerPlateRoute
   '/region/$code': typeof RegionCodeRoute
   '/ru/': typeof RuIndexRoute
+  '/sitemap/': typeof SitemapIndexRoute
   '/ru/nomer/$plate': typeof RuNomerPlateRoute
   '/ru/region/$code': typeof RuRegionCodeRoute
+  '/sitemap/$code/$series': typeof SitemapCodeSeriesRoute
+  '/ru/sitemap/': typeof RuSitemapIndexRoute
+  '/sitemap/$code/': typeof SitemapCodeIndexRoute
   '/api/og/plate/$plate': typeof ApiOgPlatePlateRoute
+  '/ru/sitemap/$code/$series': typeof RuSitemapCodeSeriesRoute
+  '/ru/sitemap/$code/': typeof RuSitemapCodeIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -75,9 +117,15 @@ export interface FileRoutesByTo {
   '/nomer/$plate': typeof NomerPlateRoute
   '/region/$code': typeof RegionCodeRoute
   '/ru': typeof RuIndexRoute
+  '/sitemap': typeof SitemapIndexRoute
   '/ru/nomer/$plate': typeof RuNomerPlateRoute
   '/ru/region/$code': typeof RuRegionCodeRoute
+  '/sitemap/$code/$series': typeof SitemapCodeSeriesRoute
+  '/ru/sitemap': typeof RuSitemapIndexRoute
+  '/sitemap/$code': typeof SitemapCodeIndexRoute
   '/api/og/plate/$plate': typeof ApiOgPlatePlateRoute
+  '/ru/sitemap/$code/$series': typeof RuSitemapCodeSeriesRoute
+  '/ru/sitemap/$code': typeof RuSitemapCodeIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -86,9 +134,15 @@ export interface FileRoutesById {
   '/nomer/$plate': typeof NomerPlateRoute
   '/region/$code': typeof RegionCodeRoute
   '/ru/': typeof RuIndexRoute
+  '/sitemap/': typeof SitemapIndexRoute
   '/ru/nomer/$plate': typeof RuNomerPlateRoute
   '/ru/region/$code': typeof RuRegionCodeRoute
+  '/sitemap/$code/$series': typeof SitemapCodeSeriesRoute
+  '/ru/sitemap/': typeof RuSitemapIndexRoute
+  '/sitemap/$code/': typeof SitemapCodeIndexRoute
   '/api/og/plate/$plate': typeof ApiOgPlatePlateRoute
+  '/ru/sitemap/$code/$series': typeof RuSitemapCodeSeriesRoute
+  '/ru/sitemap/$code/': typeof RuSitemapCodeIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -98,9 +152,15 @@ export interface FileRouteTypes {
     | '/nomer/$plate'
     | '/region/$code'
     | '/ru/'
+    | '/sitemap/'
     | '/ru/nomer/$plate'
     | '/ru/region/$code'
+    | '/sitemap/$code/$series'
+    | '/ru/sitemap/'
+    | '/sitemap/$code/'
     | '/api/og/plate/$plate'
+    | '/ru/sitemap/$code/$series'
+    | '/ru/sitemap/$code/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -108,9 +168,15 @@ export interface FileRouteTypes {
     | '/nomer/$plate'
     | '/region/$code'
     | '/ru'
+    | '/sitemap'
     | '/ru/nomer/$plate'
     | '/ru/region/$code'
+    | '/sitemap/$code/$series'
+    | '/ru/sitemap'
+    | '/sitemap/$code'
     | '/api/og/plate/$plate'
+    | '/ru/sitemap/$code/$series'
+    | '/ru/sitemap/$code'
   id:
     | '__root__'
     | '/'
@@ -118,9 +184,15 @@ export interface FileRouteTypes {
     | '/nomer/$plate'
     | '/region/$code'
     | '/ru/'
+    | '/sitemap/'
     | '/ru/nomer/$plate'
     | '/ru/region/$code'
+    | '/sitemap/$code/$series'
+    | '/ru/sitemap/'
+    | '/sitemap/$code/'
     | '/api/og/plate/$plate'
+    | '/ru/sitemap/$code/$series'
+    | '/ru/sitemap/$code/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -129,9 +201,15 @@ export interface RootRouteChildren {
   NomerPlateRoute: typeof NomerPlateRoute
   RegionCodeRoute: typeof RegionCodeRoute
   RuIndexRoute: typeof RuIndexRoute
+  SitemapIndexRoute: typeof SitemapIndexRoute
   RuNomerPlateRoute: typeof RuNomerPlateRoute
   RuRegionCodeRoute: typeof RuRegionCodeRoute
+  SitemapCodeSeriesRoute: typeof SitemapCodeSeriesRoute
+  RuSitemapIndexRoute: typeof RuSitemapIndexRoute
+  SitemapCodeIndexRoute: typeof SitemapCodeIndexRoute
   ApiOgPlatePlateRoute: typeof ApiOgPlatePlateRoute
+  RuSitemapCodeSeriesRoute: typeof RuSitemapCodeSeriesRoute
+  RuSitemapCodeIndexRoute: typeof RuSitemapCodeIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -171,6 +249,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof RuIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/sitemap/': {
+      id: '/sitemap/'
+      path: '/sitemap'
+      fullPath: '/sitemap/'
+      preLoaderRoute: typeof SitemapIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/ru/nomer/$plate': {
       id: '/ru/nomer/$plate'
       path: '/ru/nomer/$plate'
@@ -185,11 +270,46 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof RuRegionCodeRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/ru/sitemap/': {
+      id: '/ru/sitemap/'
+      path: '/ru/sitemap'
+      fullPath: '/ru/sitemap/'
+      preLoaderRoute: typeof RuSitemapIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sitemap/$code/': {
+      id: '/sitemap/$code/'
+      path: '/sitemap/$code'
+      fullPath: '/sitemap/$code/'
+      preLoaderRoute: typeof SitemapCodeIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sitemap/$code/$series': {
+      id: '/sitemap/$code/$series'
+      path: '/sitemap/$code/$series'
+      fullPath: '/sitemap/$code/$series'
+      preLoaderRoute: typeof SitemapCodeSeriesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/api/og/plate/$plate': {
       id: '/api/og/plate/$plate'
       path: '/api/og/plate/$plate'
       fullPath: '/api/og/plate/$plate'
       preLoaderRoute: typeof ApiOgPlatePlateRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/ru/sitemap/$code/': {
+      id: '/ru/sitemap/$code/'
+      path: '/ru/sitemap/$code'
+      fullPath: '/ru/sitemap/$code/'
+      preLoaderRoute: typeof RuSitemapCodeIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/ru/sitemap/$code/$series': {
+      id: '/ru/sitemap/$code/$series'
+      path: '/ru/sitemap/$code/$series'
+      fullPath: '/ru/sitemap/$code/$series'
+      preLoaderRoute: typeof RuSitemapCodeSeriesRouteImport
       parentRoute: typeof rootRouteImport
     }
   }
@@ -201,9 +321,15 @@ const rootRouteChildren: RootRouteChildren = {
   NomerPlateRoute: NomerPlateRoute,
   RegionCodeRoute: RegionCodeRoute,
   RuIndexRoute: RuIndexRoute,
+  SitemapIndexRoute: SitemapIndexRoute,
   RuNomerPlateRoute: RuNomerPlateRoute,
   RuRegionCodeRoute: RuRegionCodeRoute,
+  SitemapCodeSeriesRoute: SitemapCodeSeriesRoute,
+  RuSitemapIndexRoute: RuSitemapIndexRoute,
+  SitemapCodeIndexRoute: SitemapCodeIndexRoute,
   ApiOgPlatePlateRoute: ApiOgPlatePlateRoute,
+  RuSitemapCodeSeriesRoute: RuSitemapCodeSeriesRoute,
+  RuSitemapCodeIndexRoute: RuSitemapCodeIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

@@ -1,0 +1,1 @@
+import{u as e}from"./plates-DsGQNKFw.js";import{t}from"./SitemapRegionsPage-C0AI2nuY.js";var n=e(),r=()=>(0,n.jsx)(t,{lang:`ru`});export{r as component};

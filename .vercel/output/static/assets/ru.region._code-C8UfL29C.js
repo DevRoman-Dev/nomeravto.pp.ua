@@ -1,1 +1,0 @@
-import{u as e}from"./plates-CRia6_ol.js";import{t}from"./index-DRpzNkLo.js";import{t as n}from"./RegionPage-Dvgsd3aq.js";var r=e();function i(){let{code:e}=t.useParams();return(0,r.jsx)(n,{lang:`ru`,code:e.toUpperCase()})}export{i as component};

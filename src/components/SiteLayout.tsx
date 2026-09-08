@@ -68,11 +68,18 @@ export function SiteLayout({
       </main>
 
       <footer className="border-t border-border bg-card">
-        <div className="mx-auto max-w-5xl space-y-2 px-4 py-6 text-xs text-muted-foreground">
-          <p>{t("disclaimer", lang)}</p>
-          <p>
-            © 2026 {t("siteName", lang)} — {t("footer", lang)}
-          </p>
+        <div className="mx-auto flex max-w-5xl flex-col gap-4 sm:flex-row sm:justify-between px-4 py-6 text-xs text-muted-foreground">
+          <div className="space-y-2">
+            <p>{t("disclaimer", lang)}</p>
+            <p>
+              © 2026 {t("siteName", lang)} — {t("footer", lang)}
+            </p>
+          </div>
+          <div className="shrink-0">
+            <a href={`${base}/sitemap`} className="hover:text-primary transition-colors">
+              {t("sitemap", lang)}
+            </a>
+          </div>
         </div>
       </footer>
     </div>

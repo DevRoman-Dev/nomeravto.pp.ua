@@ -1,0 +1,1 @@
+import{u as e}from"./plates-DsGQNKFw.js";import{r as t}from"./index-CeNpmZw2.js";import{t as n}from"./SitemapNumbersPage-Bx3Wtem8.js";var r=e(),i=()=>{let e=t.useParams();return(0,r.jsx)(n,{lang:`uk`,code:e.code,series:e.series})};export{i as component};

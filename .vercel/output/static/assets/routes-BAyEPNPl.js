@@ -1,0 +1,1 @@
+import{u as e}from"./plates-DsGQNKFw.js";import{t}from"./HomePage-Oi2dwETw.js";var n=e(),r=()=>(0,n.jsx)(t,{lang:`uk`});export{r as component};

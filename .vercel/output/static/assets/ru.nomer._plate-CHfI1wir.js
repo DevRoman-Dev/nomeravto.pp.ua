@@ -1,1 +1,0 @@
-import{l as e,u as t}from"./plates-CRia6_ol.js";import{t as n}from"./PlatePage-CmFWQ9zc.js";import{n as r}from"./index-DRpzNkLo.js";var i=t();function a(){let{plate:t}=r.useParams();return(0,i.jsx)(n,{lang:`ru`,plate:e(t)})}export{a as component};
