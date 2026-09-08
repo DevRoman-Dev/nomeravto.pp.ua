@@ -15,5 +15,10 @@ export default defineConfig({
   // Target Vercel for self-hosted deployments.
   // The default Lovable build still pins Cloudflare; this preset is honored
   // when building outside Lovable (e.g. `vite build` on Vercel).
-  nitro: { preset: "vercel" },
+  nitro: { 
+    preset: "vercel",
+    externals: {
+      inline: ["@vercel/og"]
+    }
+  },
 });
