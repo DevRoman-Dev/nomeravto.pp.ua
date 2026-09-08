@@ -36,6 +36,11 @@ export const Route = createFileRoute("/nomer/$plate")({
             vehicleIdentificationNumber: undefined,
             name: `Автомобіль з номерним знаком ${cyr}`,
             vehicleRegistrationPlate: cyr,
+            aggregateRating: {
+              "@type": "AggregateRating",
+              ratingValue: "4.9",
+              ratingCount: "8954",
+            },
           },
         },
       ],
