@@ -79,6 +79,7 @@ export const T = {
     uk: "Каталог номерних знаків України. Дані з відкритих джерел.",
     ru: "Каталог номерных знаков Украины. Данные из открытых источников.",
   },
+  sitemap: { uk: "Карта сайту", ru: "Карта сайта" },
 } as const;
 
 export function t(key: keyof typeof T, lang: Lang): string {
