@@ -21,7 +21,8 @@ export const Route = createFileRoute("/api/og/plate/$plate")({
         // Average char width at font-size 160 is ~95px; total width for up to 8 chars
         const charCount = cyr.length;
         const textAreaWidth = 1060; // space after the blue stripe
-        const fontSize = charCount <= 8 ? 160 : 130;
+        const fontSize = charCount <= 6 ? 140 : charCount <= 7 ? 120 : 105;
+        const letterSpacing = charCount <= 6 ? 8 : charCount <= 7 ? 4 : 2;
 
         const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
   <!-- Background -->
@@ -52,7 +53,7 @@ export const Route = createFileRoute("/api/og/plate/$plate")({
     fill="#111827"
     text-anchor="middle"
     dominant-baseline="central"
-    letter-spacing="6"
+    letter-spacing="${letterSpacing}"
   >${cyr}</text>
 </svg>`;
 
