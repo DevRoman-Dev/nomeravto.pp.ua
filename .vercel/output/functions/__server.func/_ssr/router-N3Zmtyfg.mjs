@@ -4,7 +4,6 @@ import { i as require_react, n as QueryClientProvider, r as require_jsx_runtime 
 import { _ as useRouter, c as HeadContent, d as createRouter, f as Outlet, g as Link, h as createRootRouteWithContext, l as useRouterState, m as createFileRoute, p as lazyRouteComponent, s as Scripts } from "../_libs/@tanstack/react-router+[...].mjs";
 import { c as toCyrillicPlate, l as toLatinPlate, o as parsePlate, r as findRegion, s as regionName, t as REGIONS } from "./plates-DEmAvcbq.mjs";
 import { t as QueryClient } from "../_libs/tanstack__query-core.mjs";
-import { ImageResponse } from "@vercel/og";
 //#region node_modules/.nitro/vite/services/ssr/assets/seo-9CYAbw1r.js
 var SITE_DOMAIN = "https://nomeravto.pp.ua";
 function absoluteUrl(path) {
@@ -124,7 +123,7 @@ function siteLd(lang, name, description) {
 	};
 }
 //#endregion
-//#region node_modules/.nitro/vite/services/ssr/assets/router-a6vdKL2L.js
+//#region node_modules/.nitro/vite/services/ssr/assets/router-N3Zmtyfg.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 var styles_default = "/assets/styles-BltTvdST.css";
@@ -301,7 +300,7 @@ ${paths.map((p) => `  <url><loc>${DOMAIN}${p}</loc></url>`).join("\n")}
 </urlset>`;
 	return new Response(xml, { headers: { "Content-Type": "application/xml" } });
 } } } });
-var $$splitComponentImporter$4 = () => import("./nomer._plate-BNRt9xPO.mjs");
+var $$splitComponentImporter$4 = () => import("./nomer._plate-CsrAaMJF.mjs");
 var Route$5 = createFileRoute("/nomer/$plate")({
 	head: ({ params }) => {
 		const latin = toLatinPlate(params.plate);
@@ -353,7 +352,7 @@ var Route$5 = createFileRoute("/nomer/$plate")({
 	},
 	component: lazyRouteComponent($$splitComponentImporter$4, "component")
 });
-var $$splitComponentImporter$3 = () => import("./region._code-C4yA1-MG.mjs");
+var $$splitComponentImporter$3 = () => import("./region._code-D7Ay7RbI.mjs");
 var Route$4 = createFileRoute("/region/$code")({
 	head: ({ params }) => {
 		const code = params.code.toUpperCase();
@@ -404,7 +403,7 @@ var Route$3 = createFileRoute("/ru/")({
 	}),
 	component: lazyRouteComponent($$splitComponentImporter$2, "component")
 });
-var $$splitComponentImporter$1 = () => import("./ru.nomer._plate-v-pL-ViV.mjs");
+var $$splitComponentImporter$1 = () => import("./ru.nomer._plate-UJ5FOv_b.mjs");
 var Route$2 = createFileRoute("/ru/nomer/$plate")({
 	head: ({ params }) => {
 		const latin = toLatinPlate(params.plate);
@@ -455,7 +454,7 @@ var Route$2 = createFileRoute("/ru/nomer/$plate")({
 	},
 	component: lazyRouteComponent($$splitComponentImporter$1, "component")
 });
-var $$splitComponentImporter = () => import("./ru.region._code-B1gx4kxS.mjs");
+var $$splitComponentImporter = () => import("./ru.region._code-Bx9c58Tr.mjs");
 var Route$1 = createFileRoute("/ru/region/$code")({
 	head: ({ params }) => {
 		const code = params.code.toUpperCase();
@@ -489,103 +488,45 @@ var Route$1 = createFileRoute("/ru/region/$code")({
 	},
 	component: lazyRouteComponent($$splitComponentImporter, "component")
 });
-var Route = createFileRoute("/api/og/plate/$plate")({ server: { handlers: { GET: async ({ params }) => {
-	try {
-		const latinPlate = String(params.plate).toUpperCase().replace(/[^0-9A-Z]/g, "").slice(0, 8);
-		const cleanPlate = latinPlate.endsWith("PNG") ? latinPlate.slice(0, -3) : latinPlate;
-		const cyr = toCyrillicPlate(cleanPlate);
-		return new ImageResponse(/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-			style: {
-				display: "flex",
-				width: "100%",
-				height: "100%",
-				backgroundColor: "#f1f5f9",
-				alignItems: "center",
-				justifyContent: "center"
-			},
-			children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-				style: {
-					display: "flex",
-					width: "1000px",
-					height: "250px",
-					backgroundColor: "#ffffff",
-					border: "8px solid #cbd5e1",
-					borderRadius: "16px",
-					boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)",
-					overflow: "hidden",
-					alignItems: "center"
-				},
-				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-					style: {
-						display: "flex",
-						flexDirection: "column",
-						width: "120px",
-						height: "100%",
-						backgroundColor: "#0057b7",
-						alignItems: "center",
-						justifyContent: "space-between",
-						padding: "24px 0"
-					},
-					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-						style: {
-							display: "flex",
-							flexDirection: "column",
-							alignItems: "center",
-							gap: "8px"
-						},
-						children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-							style: {
-								display: "flex",
-								width: "60px",
-								height: "40px",
-								flexDirection: "column",
-								overflow: "hidden",
-								borderRadius: "4px"
-							},
-							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { style: {
-								display: "flex",
-								width: "100%",
-								height: "50%",
-								backgroundColor: "#0057b7"
-							} }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { style: {
-								display: "flex",
-								width: "100%",
-								height: "50%",
-								backgroundColor: "#ffd700"
-							} })]
-						})
-					}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-						style: {
-							display: "flex",
-							color: "#ffffff",
-							fontSize: "36px",
-							fontWeight: "bold"
-						},
-						children: "UA"
-					})]
-				}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-					style: {
-						display: "flex",
-						flex: 1,
-						alignItems: "center",
-						justifyContent: "center",
-						color: "#0f172a",
-						fontSize: "170px",
-						fontWeight: "bold",
-						letterSpacing: "4px",
-						paddingBottom: "16px"
-					},
-					children: cyr
-				})]
-			})
-		}), {
-			width: 1200,
-			height: 630
-		});
-	} catch (e) {
-		console.error(e);
-		return new Response("Failed to generate image", { status: 500 });
-	}
+var Route = createFileRoute("/api/og/plate/$plate")({ server: { handlers: { GET: ({ params }) => {
+	const raw = String(params.plate).toUpperCase().replace(/\.PNG$/i, "").replace(/[^0-9A-ZА-ЯІЇЄҐ]/g, "").slice(0, 8);
+	const cyr = toCyrillicPlate(raw);
+	const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <!-- Background -->
+  <rect width="1200" height="630" fill="#e8edf2"/>
+
+  <!-- Plate body -->
+  <rect x="100" y="165" width="1000" height="300" rx="20" ry="20" fill="#ffffff" stroke="#c0cad5" stroke-width="8"/>
+
+  <!-- Blue left stripe -->
+  <rect x="100" y="165" width="130" height="300" rx="20" ry="20" fill="#0057B7"/>
+  <rect x="190" y="165" width="40" height="300" fill="#0057B7"/>
+
+  <!-- Ukraine flag mini -->
+  <rect x="130" y="200" width="70" height="35" fill="#0057B7"/>
+  <rect x="130" y="235" width="70" height="35" fill="#FFD700"/>
+  <rect x="130" y="197" width="70" height="73" rx="4" ry="4" fill="none" stroke="#ffffff" stroke-width="2"/>
+
+  <!-- UA text -->
+  <text x="165" y="440" font-family="Arial Black, Arial, sans-serif" font-size="36" font-weight="900" fill="#ffffff" text-anchor="middle" letter-spacing="1">UA</text>
+
+  <!-- Plate text (centered in the white area from x=230 to x=1100) -->
+  <text
+    x="660"
+    y="350"
+    font-family="Arial Black, Arial, sans-serif"
+    font-size="${cyr.length <= 8 ? 160 : 130}"
+    font-weight="900"
+    fill="#111827"
+    text-anchor="middle"
+    dominant-baseline="central"
+    letter-spacing="6"
+  >${cyr}</text>
+</svg>`;
+	return new Response(svg, { headers: {
+		"Content-Type": "image/svg+xml",
+		"Cache-Control": "public, max-age=31536000, immutable"
+	} });
 } } } });
 var rootRouteChildren = {
 	IndexRoute: Route$7.update({
