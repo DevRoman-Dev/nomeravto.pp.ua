@@ -17,12 +17,9 @@ export const Route = createFileRoute("/api/og/plate/$plate")({
 
         const cyr = toCyrillicPlate(raw);
 
-        // Estimate text width to center it
-        // Average char width at font-size 160 is ~95px; total width for up to 8 chars
-        const charCount = cyr.length;
-        const textAreaWidth = 1060; // space after the blue stripe
-        const fontSize = charCount <= 6 ? 140 : charCount <= 7 ? 120 : 105;
-        const letterSpacing = charCount <= 6 ? 8 : charCount <= 7 ? 4 : 2;
+        // textLength forces SVG to scale the text to exactly fit the plate white area.
+        // This is the most reliable approach — no matter how many chars, it always fits.
+        const plateTextWidth = 820; // available width inside white area (from x=240 to x=1090)
 
         const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
   <!-- Background -->
@@ -43,17 +40,18 @@ export const Route = createFileRoute("/api/og/plate/$plate")({
   <!-- UA text -->
   <text x="165" y="440" font-family="Arial Black, Arial, sans-serif" font-size="36" font-weight="900" fill="#ffffff" text-anchor="middle" letter-spacing="1">UA</text>
 
-  <!-- Plate text (centered in the white area from x=230 to x=1100) -->
+  <!-- Plate text: textLength forces it to always fit the white area exactly -->
   <text
-    x="660"
+    x="655"
     y="350"
     font-family="Arial Black, Arial, sans-serif"
-    font-size="${fontSize}"
+    font-size="130"
     font-weight="900"
     fill="#111827"
     text-anchor="middle"
     dominant-baseline="central"
-    letter-spacing="${letterSpacing}"
+    textLength="${plateTextWidth}"
+    lengthAdjust="spacingAndGlyphs"
   >${cyr}</text>
 </svg>`;
 
