@@ -1,0 +1,1 @@
+import{p as e}from"./SiteLayout-B5j8VUw0.js";import{a as t}from"./index-CPBJg8qc.js";import{t as n}from"./RegionPage-aJK5UHkz.js";var r=e();function i(){let{code:e}=t.useParams();return(0,r.jsx)(n,{lang:`ru`,code:e.toUpperCase()})}export{i as component};

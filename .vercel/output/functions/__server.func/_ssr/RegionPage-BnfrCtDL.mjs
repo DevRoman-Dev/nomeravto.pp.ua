@@ -1,7 +1,7 @@
 import { r as __toESM } from "../_runtime.mjs";
 import { i as require_react, r as require_jsx_runtime } from "../_libs/react+tanstack__react-query.mjs";
 import { c as toCyrillicPlate, n as allSeries, r as findRegion, s as regionName } from "./plates-DEmAvcbq.mjs";
-import { r as t, t as SiteLayout } from "./SiteLayout-BFTVPuGg.mjs";
+import { d as SiteLayout, p as t } from "./router-BxkBg7Hk.mjs";
 //#region node_modules/.nitro/vite/services/ssr/assets/RegionPage-BnfrCtDL.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();

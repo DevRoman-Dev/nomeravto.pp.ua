@@ -1,1 +1,0 @@
-import{u as e}from"./plates-DsGQNKFw.js";import{i as t}from"./index-BErFFHP0.js";import{t as n}from"./SitemapSeriesPage-8dbcRy9P.js";var r=e(),i=()=>(0,r.jsx)(n,{lang:`uk`,code:t.useParams().code});export{i as component};

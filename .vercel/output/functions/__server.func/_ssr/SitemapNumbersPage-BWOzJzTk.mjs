@@ -1,6 +1,6 @@
 import { r as require_jsx_runtime } from "../_libs/react+tanstack__react-query.mjs";
 import { c as toCyrillicPlate, r as findRegion, s as regionName } from "./plates-DEmAvcbq.mjs";
-import { r as t, t as SiteLayout } from "./SiteLayout-BFTVPuGg.mjs";
+import { d as SiteLayout, p as t } from "./router-BxkBg7Hk.mjs";
 //#region node_modules/.nitro/vite/services/ssr/assets/SitemapNumbersPage-BWOzJzTk.js
 var import_jsx_runtime = require_jsx_runtime();
 function SitemapNumbersPage({ lang, code, series }) {

@@ -1,1 +1,0 @@
-import{l as e,u as t}from"./plates-DsGQNKFw.js";import{t as n}from"./PlatePage-CCvpimi4.js";import{c as r}from"./index-BErFFHP0.js";var i=t();function a(){let{plate:t}=r.useParams();return(0,i.jsx)(n,{lang:`uk`,plate:e(t)})}export{a as component};

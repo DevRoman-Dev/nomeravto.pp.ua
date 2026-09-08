@@ -12,26 +12,39 @@ import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
-
+import { PlateSearch } from "@/components/PlateSearch";
+import { SiteLayout } from "@/components/SiteLayout";
 function NotFoundComponent() {
+  const pathname = useRouterState({ select: (s) => s.location.pathname });
+  const lang = pathname === "/ru" || pathname.startsWith("/ru/") ? "ru" : "uk";
+  
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background px-4">
-      <div className="max-w-md text-center">
-        <h1 className="text-7xl font-bold text-foreground">404</h1>
-        <h2 className="mt-4 text-xl font-semibold text-foreground">Page not found</h2>
-        <p className="mt-2 text-sm text-muted-foreground">
-          The page you're looking for doesn't exist or has been moved.
+    <SiteLayout lang={lang} altHref={pathname}>
+      <div className="flex min-h-[50vh] flex-col items-center justify-center px-4 py-12 text-center">
+        <h1 className="font-plate text-7xl font-bold text-primary">404</h1>
+        <h2 className="mt-4 text-2xl font-semibold text-foreground">
+          {lang === "uk" ? "Сторінку не знайдено" : "Страница не найдена"}
+        </h2>
+        <p className="mt-2 text-muted-foreground max-w-md">
+          {lang === "uk"
+            ? "Можливо, вона була видалена або ви перейшли за хибним посиланням. Спробуйте знайти автомобіль за номером:"
+            : "Возможно, она была удалена или вы перешли по неверной ссылке. Попробуйте найти автомобиль по номеру:"}
         </p>
-        <div className="mt-6">
+        
+        <div className="mt-8 w-full max-w-xl text-left bg-card p-4 sm:p-6 rounded-xl border border-border shadow-sm">
+          <PlateSearch lang={lang} />
+        </div>
+        
+        <div className="mt-8">
           <Link
-            to="/"
-            className="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
+            to={lang === "uk" ? "/" : "/ru"}
+            className="chip chip-hover inline-flex items-center justify-center px-6 py-3 text-sm font-medium"
           >
-            Go home
+            {lang === "uk" ? "На головну" : "На главную"}
           </Link>
         </div>
       </div>
-    </div>
+    </SiteLayout>
   );
 }
 
