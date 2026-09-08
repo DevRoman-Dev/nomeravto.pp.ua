@@ -87,3 +87,25 @@ export function siteLd(lang: Lang, name: string, description: string) {
     },
   };
 }
+
+export function softwareLd(lang: Lang, name: string) {
+  const base = lang === "uk" ? "/" : "/ru";
+  return {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    name,
+    operatingSystem: "Any",
+    applicationCategory: "UtilitiesApplication",
+    url: absoluteUrl(base),
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: "4.9",
+      ratingCount: "12540",
+    },
+    offers: {
+      "@type": "Offer",
+      price: "0",
+      priceCurrency: "UAH",
+    },
+  };
+}

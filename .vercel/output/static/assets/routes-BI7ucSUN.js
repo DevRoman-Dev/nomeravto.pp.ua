@@ -1,1 +1,0 @@
-import{p as e}from"./SiteLayout-B5j8VUw0.js";import{t}from"./HomePage-CTYJaygs.js";var n=e(),r=()=>(0,n.jsx)(t,{lang:`uk`});export{r as component};

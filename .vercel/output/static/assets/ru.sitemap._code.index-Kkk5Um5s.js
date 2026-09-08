@@ -1,0 +1,1 @@
+import{i as e}from"./SiteLayout-NffXlaWk.js";import{n as t}from"./index-gnVpjlAA.js";import{t as n}from"./SitemapSeriesPage-DqSlekMr.js";var r=e(),i=()=>(0,r.jsx)(n,{lang:`ru`,code:t.useParams().code});export{i as component};

@@ -31,6 +31,7 @@ export const T = {
   navHome: { uk: "Головна", ru: "Главная" },
   navRegions: { uk: "Регіони", ru: "Регионы" },
   navAbout: { uk: "Про базу", ru: "О базе" },
+  navBlog: { uk: "Блог", ru: "Блог" },
   searchTitle: { uk: "Перевірка авто за номерним знаком", ru: "Проверка авто по номерному знаку" },
   searchPlaceholder: { uk: "НОМЕРНИЙ ЗНАК", ru: "ГОСНОМЕР ТС" },
   searchButton: { uk: "Знайти", ru: "Найти" },

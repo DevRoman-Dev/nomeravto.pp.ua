@@ -32,6 +32,9 @@ export function SiteLayout({
             <a href={`${base}/#regions`} className="transition-colors hover:text-primary">
               {t("navRegions", lang)}
             </a>
+            <a href={`${base}/blog`} className="transition-colors hover:text-primary">
+              {t("navBlog", lang)}
+            </a>
             <a href={`${base}/#about`} className="transition-colors hover:text-primary">
               {t("navAbout", lang)}
             </a>

@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 
 import { PlatePage } from "@/components/pages/PlatePage";
 import { findRegion, parsePlate, regionName, toCyrillicPlate, toLatinPlate } from "@/lib/plates";
-import { breadcrumbLd, seoHead } from "@/lib/seo";
+import { breadcrumbLd, seoHead, softwareLd } from "@/lib/seo";
 
 export const Route = createFileRoute("/ru/nomer/$plate")({
   head: ({ params }) => {
@@ -23,9 +23,11 @@ export const Route = createFileRoute("/ru/nomer/$plate")({
       jsonLd: [
         breadcrumbLd([
           { name: "Главная", item: "/ru" },
+          { name: "Регионы", item: "/ru/#regions" },
           ...(region ? [{ name: name, item: `/ru/region/${region.code}` }] : []),
           { name: cyr, item: `/ru/nomer/${latin}` },
         ]),
+        softwareLd("ru", "Проверка номерных знаков Украины"),
         {
           "@context": "https://schema.org",
           "@type": "ItemPage",

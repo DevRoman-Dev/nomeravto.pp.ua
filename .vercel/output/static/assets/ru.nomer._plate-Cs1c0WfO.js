@@ -1,1 +1,0 @@
-import{p as e,u as t}from"./SiteLayout-B5j8VUw0.js";import{t as n}from"./PlatePage-Dyb9GEUu.js";import{o as r}from"./index-CPBJg8qc.js";var i=e();function a(){let{plate:e}=r.useParams();return(0,i.jsx)(n,{lang:`ru`,plate:t(e)})}export{a as component};

@@ -1,0 +1,1 @@
+import{i as e}from"./SiteLayout-NffXlaWk.js";import{t}from"./PlatePage-CaYc3_rx.js";import{l as n}from"./plates-DxvE-t3k.js";import{o as r}from"./index-gnVpjlAA.js";var i=e();function a(){let{plate:e}=r.useParams();return(0,i.jsx)(t,{lang:`ru`,plate:n(e)})}export{a as component};

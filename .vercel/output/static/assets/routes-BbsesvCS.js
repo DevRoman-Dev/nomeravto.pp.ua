@@ -1,0 +1,1 @@
+import{i as e}from"./SiteLayout-NffXlaWk.js";import{t}from"./HomePage-q_nL_9Kj.js";var n=e(),r=()=>(0,n.jsx)(t,{lang:`uk`});export{r as component};

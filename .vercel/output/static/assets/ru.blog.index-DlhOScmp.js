@@ -1,0 +1,1 @@
+import{i as e}from"./SiteLayout-NffXlaWk.js";import{t}from"./BlogPage-BurvsuAv.js";var n=e(),r=()=>(0,n.jsx)(t,{lang:`ru`});export{r as component};

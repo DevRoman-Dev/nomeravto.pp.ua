@@ -11,10 +11,18 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
+import { Route as BlogIndexRouteImport } from './routes/blog.index'
+import { Route as BlogCheckAccidentsRouteImport } from './routes/blog.check-accidents'
+import { Route as BlogPlateColorsRouteImport } from './routes/blog.plate-colors'
+import { Route as BlogRegionCodesRouteImport } from './routes/blog.region-codes'
 import { Route as NomerPlateRouteImport } from './routes/nomer.$plate'
 import { Route as RegionCodeRouteImport } from './routes/region.$code'
 import { Route as RuIndexRouteImport } from './routes/ru.index'
 import { Route as SitemapIndexRouteImport } from './routes/sitemap.index'
+import { Route as RuBlogIndexRouteImport } from './routes/ru.blog.index'
+import { Route as RuBlogCheckAccidentsRouteImport } from './routes/ru.blog.check-accidents'
+import { Route as RuBlogPlateColorsRouteImport } from './routes/ru.blog.plate-colors'
+import { Route as RuBlogRegionCodesRouteImport } from './routes/ru.blog.region-codes'
 import { Route as RuNomerPlateRouteImport } from './routes/ru.nomer.$plate'
 import { Route as RuRegionCodeRouteImport } from './routes/ru.region.$code'
 import { Route as RuSitemapIndexRouteImport } from './routes/ru.sitemap.index'
@@ -32,6 +40,26 @@ const IndexRoute = IndexRouteImport.update({
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   id: '/sitemap.xml',
   path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BlogIndexRoute = BlogIndexRouteImport.update({
+  id: '/blog/',
+  path: '/blog/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BlogCheckAccidentsRoute = BlogCheckAccidentsRouteImport.update({
+  id: '/blog/check-accidents',
+  path: '/blog/check-accidents',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BlogPlateColorsRoute = BlogPlateColorsRouteImport.update({
+  id: '/blog/plate-colors',
+  path: '/blog/plate-colors',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BlogRegionCodesRoute = BlogRegionCodesRouteImport.update({
+  id: '/blog/region-codes',
+  path: '/blog/region-codes',
   getParentRoute: () => rootRouteImport,
 } as any)
 const NomerPlateRoute = NomerPlateRouteImport.update({
@@ -52,6 +80,26 @@ const RuIndexRoute = RuIndexRouteImport.update({
 const SitemapIndexRoute = SitemapIndexRouteImport.update({
   id: '/sitemap/',
   path: '/sitemap/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RuBlogIndexRoute = RuBlogIndexRouteImport.update({
+  id: '/ru/blog/',
+  path: '/ru/blog/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RuBlogCheckAccidentsRoute = RuBlogCheckAccidentsRouteImport.update({
+  id: '/ru/blog/check-accidents',
+  path: '/ru/blog/check-accidents',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RuBlogPlateColorsRoute = RuBlogPlateColorsRouteImport.update({
+  id: '/ru/blog/plate-colors',
+  path: '/ru/blog/plate-colors',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RuBlogRegionCodesRoute = RuBlogRegionCodesRouteImport.update({
+  id: '/ru/blog/region-codes',
+  path: '/ru/blog/region-codes',
   getParentRoute: () => rootRouteImport,
 } as any)
 const RuNomerPlateRoute = RuNomerPlateRouteImport.update({
@@ -98,13 +146,21 @@ const RuSitemapCodeSeriesRoute = RuSitemapCodeSeriesRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/blog/check-accidents': typeof BlogCheckAccidentsRoute
+  '/blog/plate-colors': typeof BlogPlateColorsRoute
+  '/blog/region-codes': typeof BlogRegionCodesRoute
   '/nomer/$plate': typeof NomerPlateRoute
   '/region/$code': typeof RegionCodeRoute
+  '/blog/': typeof BlogIndexRoute
   '/ru/': typeof RuIndexRoute
   '/sitemap/': typeof SitemapIndexRoute
+  '/ru/blog/check-accidents': typeof RuBlogCheckAccidentsRoute
+  '/ru/blog/plate-colors': typeof RuBlogPlateColorsRoute
+  '/ru/blog/region-codes': typeof RuBlogRegionCodesRoute
   '/ru/nomer/$plate': typeof RuNomerPlateRoute
   '/ru/region/$code': typeof RuRegionCodeRoute
   '/sitemap/$code/$series': typeof SitemapCodeSeriesRoute
+  '/ru/blog/': typeof RuBlogIndexRoute
   '/ru/sitemap/': typeof RuSitemapIndexRoute
   '/sitemap/$code/': typeof SitemapCodeIndexRoute
   '/api/og/plate/$plate': typeof ApiOgPlatePlateRoute
@@ -114,13 +170,21 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/blog/check-accidents': typeof BlogCheckAccidentsRoute
+  '/blog/plate-colors': typeof BlogPlateColorsRoute
+  '/blog/region-codes': typeof BlogRegionCodesRoute
   '/nomer/$plate': typeof NomerPlateRoute
   '/region/$code': typeof RegionCodeRoute
+  '/blog': typeof BlogIndexRoute
   '/ru': typeof RuIndexRoute
   '/sitemap': typeof SitemapIndexRoute
+  '/ru/blog/check-accidents': typeof RuBlogCheckAccidentsRoute
+  '/ru/blog/plate-colors': typeof RuBlogPlateColorsRoute
+  '/ru/blog/region-codes': typeof RuBlogRegionCodesRoute
   '/ru/nomer/$plate': typeof RuNomerPlateRoute
   '/ru/region/$code': typeof RuRegionCodeRoute
   '/sitemap/$code/$series': typeof SitemapCodeSeriesRoute
+  '/ru/blog': typeof RuBlogIndexRoute
   '/ru/sitemap': typeof RuSitemapIndexRoute
   '/sitemap/$code': typeof SitemapCodeIndexRoute
   '/api/og/plate/$plate': typeof ApiOgPlatePlateRoute
@@ -131,13 +195,21 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/blog/check-accidents': typeof BlogCheckAccidentsRoute
+  '/blog/plate-colors': typeof BlogPlateColorsRoute
+  '/blog/region-codes': typeof BlogRegionCodesRoute
   '/nomer/$plate': typeof NomerPlateRoute
   '/region/$code': typeof RegionCodeRoute
+  '/blog/': typeof BlogIndexRoute
   '/ru/': typeof RuIndexRoute
   '/sitemap/': typeof SitemapIndexRoute
+  '/ru/blog/check-accidents': typeof RuBlogCheckAccidentsRoute
+  '/ru/blog/plate-colors': typeof RuBlogPlateColorsRoute
+  '/ru/blog/region-codes': typeof RuBlogRegionCodesRoute
   '/ru/nomer/$plate': typeof RuNomerPlateRoute
   '/ru/region/$code': typeof RuRegionCodeRoute
   '/sitemap/$code/$series': typeof SitemapCodeSeriesRoute
+  '/ru/blog/': typeof RuBlogIndexRoute
   '/ru/sitemap/': typeof RuSitemapIndexRoute
   '/sitemap/$code/': typeof SitemapCodeIndexRoute
   '/api/og/plate/$plate': typeof ApiOgPlatePlateRoute
@@ -149,13 +221,21 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/sitemap.xml'
+    | '/blog/check-accidents'
+    | '/blog/plate-colors'
+    | '/blog/region-codes'
     | '/nomer/$plate'
     | '/region/$code'
+    | '/blog/'
     | '/ru/'
     | '/sitemap/'
+    | '/ru/blog/check-accidents'
+    | '/ru/blog/plate-colors'
+    | '/ru/blog/region-codes'
     | '/ru/nomer/$plate'
     | '/ru/region/$code'
     | '/sitemap/$code/$series'
+    | '/ru/blog/'
     | '/ru/sitemap/'
     | '/sitemap/$code/'
     | '/api/og/plate/$plate'
@@ -165,13 +245,21 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/sitemap.xml'
+    | '/blog/check-accidents'
+    | '/blog/plate-colors'
+    | '/blog/region-codes'
     | '/nomer/$plate'
     | '/region/$code'
+    | '/blog'
     | '/ru'
     | '/sitemap'
+    | '/ru/blog/check-accidents'
+    | '/ru/blog/plate-colors'
+    | '/ru/blog/region-codes'
     | '/ru/nomer/$plate'
     | '/ru/region/$code'
     | '/sitemap/$code/$series'
+    | '/ru/blog'
     | '/ru/sitemap'
     | '/sitemap/$code'
     | '/api/og/plate/$plate'
@@ -181,13 +269,21 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/sitemap.xml'
+    | '/blog/check-accidents'
+    | '/blog/plate-colors'
+    | '/blog/region-codes'
     | '/nomer/$plate'
     | '/region/$code'
+    | '/blog/'
     | '/ru/'
     | '/sitemap/'
+    | '/ru/blog/check-accidents'
+    | '/ru/blog/plate-colors'
+    | '/ru/blog/region-codes'
     | '/ru/nomer/$plate'
     | '/ru/region/$code'
     | '/sitemap/$code/$series'
+    | '/ru/blog/'
     | '/ru/sitemap/'
     | '/sitemap/$code/'
     | '/api/og/plate/$plate'
@@ -198,13 +294,21 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
+  BlogCheckAccidentsRoute: typeof BlogCheckAccidentsRoute
+  BlogPlateColorsRoute: typeof BlogPlateColorsRoute
+  BlogRegionCodesRoute: typeof BlogRegionCodesRoute
   NomerPlateRoute: typeof NomerPlateRoute
   RegionCodeRoute: typeof RegionCodeRoute
+  BlogIndexRoute: typeof BlogIndexRoute
   RuIndexRoute: typeof RuIndexRoute
   SitemapIndexRoute: typeof SitemapIndexRoute
+  RuBlogCheckAccidentsRoute: typeof RuBlogCheckAccidentsRoute
+  RuBlogPlateColorsRoute: typeof RuBlogPlateColorsRoute
+  RuBlogRegionCodesRoute: typeof RuBlogRegionCodesRoute
   RuNomerPlateRoute: typeof RuNomerPlateRoute
   RuRegionCodeRoute: typeof RuRegionCodeRoute
   SitemapCodeSeriesRoute: typeof SitemapCodeSeriesRoute
+  RuBlogIndexRoute: typeof RuBlogIndexRoute
   RuSitemapIndexRoute: typeof RuSitemapIndexRoute
   SitemapCodeIndexRoute: typeof SitemapCodeIndexRoute
   ApiOgPlatePlateRoute: typeof ApiOgPlatePlateRoute
@@ -226,6 +330,34 @@ declare module '@tanstack/react-router' {
       path: '/sitemap.xml'
       fullPath: '/sitemap.xml'
       preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/blog/': {
+      id: '/blog/'
+      path: '/blog'
+      fullPath: '/blog/'
+      preLoaderRoute: typeof BlogIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/blog/check-accidents': {
+      id: '/blog/check-accidents'
+      path: '/blog/check-accidents'
+      fullPath: '/blog/check-accidents'
+      preLoaderRoute: typeof BlogCheckAccidentsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/blog/plate-colors': {
+      id: '/blog/plate-colors'
+      path: '/blog/plate-colors'
+      fullPath: '/blog/plate-colors'
+      preLoaderRoute: typeof BlogPlateColorsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/blog/region-codes': {
+      id: '/blog/region-codes'
+      path: '/blog/region-codes'
+      fullPath: '/blog/region-codes'
+      preLoaderRoute: typeof BlogRegionCodesRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/nomer/$plate': {
@@ -254,6 +386,34 @@ declare module '@tanstack/react-router' {
       path: '/sitemap'
       fullPath: '/sitemap/'
       preLoaderRoute: typeof SitemapIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/ru/blog/': {
+      id: '/ru/blog/'
+      path: '/ru/blog'
+      fullPath: '/ru/blog/'
+      preLoaderRoute: typeof RuBlogIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/ru/blog/check-accidents': {
+      id: '/ru/blog/check-accidents'
+      path: '/ru/blog/check-accidents'
+      fullPath: '/ru/blog/check-accidents'
+      preLoaderRoute: typeof RuBlogCheckAccidentsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/ru/blog/plate-colors': {
+      id: '/ru/blog/plate-colors'
+      path: '/ru/blog/plate-colors'
+      fullPath: '/ru/blog/plate-colors'
+      preLoaderRoute: typeof RuBlogPlateColorsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/ru/blog/region-codes': {
+      id: '/ru/blog/region-codes'
+      path: '/ru/blog/region-codes'
+      fullPath: '/ru/blog/region-codes'
+      preLoaderRoute: typeof RuBlogRegionCodesRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/ru/nomer/$plate': {
@@ -318,13 +478,21 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
+  BlogCheckAccidentsRoute: BlogCheckAccidentsRoute,
+  BlogPlateColorsRoute: BlogPlateColorsRoute,
+  BlogRegionCodesRoute: BlogRegionCodesRoute,
   NomerPlateRoute: NomerPlateRoute,
   RegionCodeRoute: RegionCodeRoute,
+  BlogIndexRoute: BlogIndexRoute,
   RuIndexRoute: RuIndexRoute,
   SitemapIndexRoute: SitemapIndexRoute,
+  RuBlogCheckAccidentsRoute: RuBlogCheckAccidentsRoute,
+  RuBlogPlateColorsRoute: RuBlogPlateColorsRoute,
+  RuBlogRegionCodesRoute: RuBlogRegionCodesRoute,
   RuNomerPlateRoute: RuNomerPlateRoute,
   RuRegionCodeRoute: RuRegionCodeRoute,
   SitemapCodeSeriesRoute: SitemapCodeSeriesRoute,
+  RuBlogIndexRoute: RuBlogIndexRoute,
   RuSitemapIndexRoute: RuSitemapIndexRoute,
   SitemapCodeIndexRoute: SitemapCodeIndexRoute,
   ApiOgPlatePlateRoute: ApiOgPlatePlateRoute,

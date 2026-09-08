@@ -1,1 +1,0 @@
-import{p as e}from"./SiteLayout-B5j8VUw0.js";import{r as t}from"./index-CPBJg8qc.js";import{t as n}from"./SitemapNumbersPage-DbhiIezI.js";var r=e(),i=()=>{let e=t.useParams();return(0,r.jsx)(n,{lang:`uk`,code:e.code,series:e.series})};export{i as component};
