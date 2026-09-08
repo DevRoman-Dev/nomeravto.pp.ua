@@ -1,11 +1,11 @@
 import { r as __toESM } from "../_runtime.mjs";
 import { i as require_react, r as require_jsx_runtime, t as useQuery } from "../_libs/react+tanstack__react-query.mjs";
 import { D as isRedirect, _ as useRouter } from "../_libs/@tanstack/react-router+[...].mjs";
-import { a as TSS_SERVER_FUNCTION, i as createServerFn, o as getServerFnById } from "./server-Cx42Q75O.mjs";
+import { a as TSS_SERVER_FUNCTION, i as createServerFn, o as getServerFnById } from "./server-piEJ3y4E.mjs";
 import { c as toCyrillicPlate, o as parsePlate, r as findRegion, s as regionName } from "./plates-DEmAvcbq.mjs";
 import { n as fieldLabel, r as t, t as SiteLayout } from "./SiteLayout-BFTVPuGg.mjs";
 import { n as PlateSearch, t as PlateBadge } from "./PlateSearch-CQRscfSa.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/PlatePage-Ez1IEgyG.js
+//#region node_modules/.nitro/vite/services/ssr/assets/PlatePage-CL4Y1KEO.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 function useServerFn(serverFn) {

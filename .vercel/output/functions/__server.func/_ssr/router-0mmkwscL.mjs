@@ -123,7 +123,7 @@ function siteLd(lang, name, description) {
 	};
 }
 //#endregion
-//#region node_modules/.nitro/vite/services/ssr/assets/router-jLiXmT80.js
+//#region node_modules/.nitro/vite/services/ssr/assets/router-0mmkwscL.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 var styles_default = "/assets/styles-CK9jBPGg.css";
@@ -300,7 +300,7 @@ ${paths.map((p) => `  <url><loc>${DOMAIN}${p}</loc></url>`).join("\n")}
 </urlset>`;
 	return new Response(xml, { headers: { "Content-Type": "application/xml" } });
 } } } });
-var $$splitComponentImporter$10 = () => import("./nomer._plate-CUfhiqLt.mjs");
+var $$splitComponentImporter$10 = () => import("./nomer._plate-MISt4JMS.mjs");
 var Route$11 = createFileRoute("/nomer/$plate")({
 	head: ({ params }) => {
 		const latin = toLatinPlate(params.plate);
@@ -352,7 +352,7 @@ var Route$11 = createFileRoute("/nomer/$plate")({
 	},
 	component: lazyRouteComponent($$splitComponentImporter$10, "component")
 });
-var $$splitComponentImporter$9 = () => import("./region._code-DTQtISIA.mjs");
+var $$splitComponentImporter$9 = () => import("./region._code-DC926aMr.mjs");
 var Route$10 = createFileRoute("/region/$code")({
 	head: ({ params }) => {
 		const code = params.code.toUpperCase();
@@ -404,8 +404,17 @@ var Route$9 = createFileRoute("/ru/")({
 	component: lazyRouteComponent($$splitComponentImporter$8, "component")
 });
 var $$splitComponentImporter$7 = () => import("./sitemap.index-jP6x-Qjv.mjs");
-var Route$8 = createFileRoute("/sitemap/")({ component: lazyRouteComponent($$splitComponentImporter$7, "component") });
-var $$splitComponentImporter$6 = () => import("./ru.nomer._plate-DIy-XwGQ.mjs");
+var Route$8 = createFileRoute("/sitemap/")({
+	component: lazyRouteComponent($$splitComponentImporter$7, "component"),
+	head: () => seoHead({
+		lang: "uk",
+		title: "Карта сайту",
+		description: "Повна карта сайту автомобільних номерів України",
+		path: "/sitemap",
+		altPath: "/ru/sitemap"
+	})
+});
+var $$splitComponentImporter$6 = () => import("./ru.nomer._plate-DngWplwz.mjs");
 var Route$7 = createFileRoute("/ru/nomer/$plate")({
 	head: ({ params }) => {
 		const latin = toLatinPlate(params.plate);
@@ -456,7 +465,7 @@ var Route$7 = createFileRoute("/ru/nomer/$plate")({
 	},
 	component: lazyRouteComponent($$splitComponentImporter$6, "component")
 });
-var $$splitComponentImporter$5 = () => import("./ru.region._code-CxLufW5b.mjs");
+var $$splitComponentImporter$5 = () => import("./ru.region._code-Bf8i2zNx.mjs");
 var Route$6 = createFileRoute("/ru/region/$code")({
 	head: ({ params }) => {
 		const code = params.code.toUpperCase();
@@ -491,16 +500,37 @@ var Route$6 = createFileRoute("/ru/region/$code")({
 	component: lazyRouteComponent($$splitComponentImporter$5, "component")
 });
 var $$splitComponentImporter$4 = () => import("./ru.sitemap.index-wiXtdzVP.mjs");
-var Route$5 = createFileRoute("/ru/sitemap/")({ component: lazyRouteComponent($$splitComponentImporter$4, "component") });
-var $$splitComponentImporter$3 = () => import("./sitemap._code.index-BZWQTit3.mjs");
+var Route$5 = createFileRoute("/ru/sitemap/")({
+	component: lazyRouteComponent($$splitComponentImporter$4, "component"),
+	head: () => seoHead({
+		lang: "ru",
+		title: "Карта сайта",
+		description: "Полная карта сайта автомобильных номеров Украины",
+		path: "/ru/sitemap",
+		altPath: "/sitemap"
+	})
+});
+var $$splitComponentImporter$3 = () => import("./sitemap._code.index-D6nhuYH9.mjs");
 var Route$4 = createFileRoute("/sitemap/$code/")({
 	component: lazyRouteComponent($$splitComponentImporter$3, "component"),
-	head: ({ params }) => seoHead("uk", { title: `Карта сайту - Регіон ${params.code}` })
+	head: ({ params }) => seoHead({
+		lang: "uk",
+		title: `Карта сайту - Регіон ${params.code}`,
+		description: `Серії номерних знаків для регіону ${params.code}`,
+		path: `/sitemap/${params.code}`,
+		altPath: `/ru/sitemap/${params.code}`
+	})
 });
-var $$splitComponentImporter$2 = () => import("./sitemap._code._series-MsuxwEQl.mjs");
+var $$splitComponentImporter$2 = () => import("./sitemap._code._series-gWq0yCW9.mjs");
 var Route$3 = createFileRoute("/sitemap/$code/$series")({
 	component: lazyRouteComponent($$splitComponentImporter$2, "component"),
-	head: ({ params }) => seoHead("uk", { title: `Карта сайту - Регіон ${params.code}, Серія ${params.series}` })
+	head: ({ params }) => seoHead({
+		lang: "uk",
+		title: `Карта сайту - Регіон ${params.code}, Серія ${params.series}`,
+		description: `Усі номерні знаки для регіону ${params.code}, серії ${params.series}`,
+		path: `/sitemap/${params.code}/${params.series}`,
+		altPath: `/ru/sitemap/${params.code}/${params.series}`
+	})
 });
 var Route$2 = createFileRoute("/api/og/plate/$plate")({ server: { handlers: { GET: ({ params }) => {
 	const raw = String(params.plate).toUpperCase().replace(/\.PNG$/i, "").replace(/[^0-9A-ZА-ЯІЇЄҐ]/g, "").slice(0, 8);
@@ -542,15 +572,27 @@ var Route$2 = createFileRoute("/api/og/plate/$plate")({ server: { handlers: { GE
 		"Cache-Control": "public, max-age=86400, s-maxage=86400, stale-while-revalidate=3600"
 	} });
 } } } });
-var $$splitComponentImporter$1 = () => import("./ru.sitemap._code.index-ChttrfYO.mjs");
+var $$splitComponentImporter$1 = () => import("./ru.sitemap._code.index-DL3oqdDK.mjs");
 var Route$1 = createFileRoute("/ru/sitemap/$code/")({
 	component: lazyRouteComponent($$splitComponentImporter$1, "component"),
-	head: ({ params }) => seoHead("ru", { title: `Карта сайта - Регион ${params.code}` })
+	head: ({ params }) => seoHead({
+		lang: "ru",
+		title: `Карта сайта - Регион ${params.code}`,
+		description: `Серии номерных знаков для региона ${params.code}`,
+		path: `/ru/sitemap/${params.code}`,
+		altPath: `/sitemap/${params.code}`
+	})
 });
-var $$splitComponentImporter = () => import("./ru.sitemap._code._series-C4ncFbx0.mjs");
+var $$splitComponentImporter = () => import("./ru.sitemap._code._series-MoYm6i-n.mjs");
 var Route = createFileRoute("/ru/sitemap/$code/$series")({
 	component: lazyRouteComponent($$splitComponentImporter, "component"),
-	head: ({ params }) => seoHead("ru", { title: `Карта сайта - Регион ${params.code}, Серия ${params.series}` })
+	head: ({ params }) => seoHead({
+		lang: "ru",
+		title: `Карта сайта - Регион ${params.code}, Серия ${params.series}`,
+		description: `Все номерные знаки для региона ${params.code}, серии ${params.series}`,
+		path: `/ru/sitemap/${params.code}/${params.series}`,
+		altPath: `/sitemap/${params.code}/${params.series}`
+	})
 });
 var IndexRoute = Route$13.update({
 	id: "/",

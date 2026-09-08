@@ -1,8 +1,8 @@
 import { r as require_jsx_runtime } from "../_libs/react+tanstack__react-query.mjs";
 import { l as toLatinPlate } from "./plates-DEmAvcbq.mjs";
-import { t as PlatePage } from "./PlatePage-Ez1IEgyG.mjs";
-import { s as Route$7 } from "./router-jLiXmT80.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/ru.nomer._plate-DIy-XwGQ.js
+import { t as PlatePage } from "./PlatePage-CL4Y1KEO.mjs";
+import { s as Route$7 } from "./router-0mmkwscL.mjs";
+//#region node_modules/.nitro/vite/services/ssr/assets/ru.nomer._plate-DngWplwz.js
 var import_jsx_runtime = require_jsx_runtime();
 function RouteComponent() {
 	const { plate } = Route$7.useParams();
