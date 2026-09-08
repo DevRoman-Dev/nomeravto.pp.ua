@@ -99,6 +99,51 @@ export function HomePage({ lang }: { lang: Lang }) {
           )}
         </div>
       </section>
+
+      <section id="partners" className="panel mt-8 scroll-mt-24 px-5 py-6 sm:px-8">
+        <h2 className="text-2xl">{lang === "uk" ? "Партнери сайту" : "Партнёры сайта"}</h2>
+        <ul className="mt-4 grid gap-3 sm:grid-cols-3">
+          <li>
+            <a
+              href="https://apartner.pro"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="panel flex h-full flex-col gap-1 px-4 py-4 transition-colors hover:border-primary"
+            >
+              <span className="text-sm font-semibold text-foreground">apartner.pro</span>
+              <span className="text-xs text-muted-foreground">
+                {lang === "uk" ? "Веб-студія розробки сайтів" : "Веб-студия разработки сайтов"}
+              </span>
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://keytest.pp.ua"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="panel flex h-full flex-col gap-1 px-4 py-4 transition-colors hover:border-primary"
+            >
+              <span className="text-sm font-semibold text-foreground">keytest.pp.ua</span>
+              <span className="text-xs text-muted-foreground">
+                {lang === "uk" ? "Тестування клавіатури онлайн" : "Тестирование клавиатуры онлайн"}
+              </span>
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://monitortest.pp.ua"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="panel flex h-full flex-col gap-1 px-4 py-4 transition-colors hover:border-primary"
+            >
+              <span className="text-sm font-semibold text-foreground">monitortest.pp.ua</span>
+              <span className="text-xs text-muted-foreground">
+                {lang === "uk" ? "Тестування екрану монітора онлайн" : "Тестирование экрана монитора онлайн"}
+              </span>
+            </a>
+          </li>
+        </ul>
+      </section>
     </SiteLayout>
   );
 }
