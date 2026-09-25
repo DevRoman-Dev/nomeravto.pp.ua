@@ -1,7 +1,17 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "buildCommand": "vite build",
-  "outputDirectory": "dist",
+  "outputDirectory": ".output",
   "installCommand": "npm install",
-  "framework": null
+  "framework": null,
+  "routes": [
+    {
+      "src": "/f80075330ad1ee37b07ef3b86f721daf\\.txt",
+      "dest": "/f80075330ad1ee37b07ef3b86f721daf.txt"
+    },
+    {
+      "src": "/robots\\.txt",
+      "dest": "/robots.txt"
+    }
+  ]
 }
