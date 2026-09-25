@@ -3,15 +3,5 @@
   "buildCommand": "vite build",
   "outputDirectory": ".output",
   "installCommand": "npm install",
-  "framework": null,
-  "routes": [
-    {
-      "src": "/f80075330ad1ee37b07ef3b86f721daf\\.txt",
-      "dest": "/f80075330ad1ee37b07ef3b86f721daf.txt"
-    },
-    {
-      "src": "/robots\\.txt",
-      "dest": "/robots.txt"
-    }
-  ]
+  "framework": null
 }
